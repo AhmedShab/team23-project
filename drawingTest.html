@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+    <title>Sketch Pad</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+
+	<script src="js/jquery/jquery.js"></script>
+	<script src="js/jquery/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/drawing-script.js"></script>
+    <style type="text/css">
+	  body {
+	
+	  }
+
+
+	  #drawing-box {
+	  	width: 100%;
+	  }
+
+	  li {
+display: block;
+	  }
+
+	  img#new {
+	  	width: 40px;
+	  }
+
+	  #loading {
+	  	margin: auto;
+	margin-top: 30%;
+	margin-left: 41%;
+
+	  	width: 10%;
+	  }
+	 
+
+	  #content {
+          overflow:hidden;
+          display: inline-block;
+		  /*background-color:#ddd;*/
+		  border:  1px solid black;
+		  width: 50%;
+        height: 300px;
+	  }
+	  #canvas{
+
+		cursor:crosshair ;
+        background-color:#d7d7d7;
+	  }
+
+	  .palette-case {
+	  	/*float: right;*/
+	  	display: inline-block;
+		width:20px;
+		padding: 0;
+		text-align:center;
+	  }
+	  .palette-box {
+		
+		padding:2px 6px 2px 6px;
+	  }
+	  .palette {
+		border:2px solid #777;
+		height:36px;
+		width:36px;
+	  }
+	  .red{
+		background-color:#c22;
+	  }
+	  .blue{
+		background-color:#22c;
+	  }
+	  .green{
+		background-color:#2c2;
+	  }
+	  .yellow{
+		background-color:#e4ff00;
+	  }
+	  .black{
+		background-color:#000;
+		border:2px dashed #fff;
+	  }
+    </style>
+
+</head>
+<body>
+
+
+		<div id="drawing-box" >
+		
+
+		    <div id="content"><img id='loading' src="img/icons/loading.gif"></div>
+
+		    	    
+				<ul class="palette-case">
+
+					<li class="palette-box">
+						<div class="palette yellow"></div>
+					</li>	
+					<li class="palette-box">
+						<div class="palette red"></div>
+					</li>
+					<li class="palette-box">
+						<div class="palette blue"></div>
+					</li>
+					<li class="palette-box">
+						<div class="palette green"></div>
+					</li>
+					<li class="palette-box">
+						<div class="palette black"></div>
+					</li>
+					<li class="palette-box">
+						<img id="new" src="img/icons/trash.png" >
+					</li>		
+					<div style="clear:both"></div>
+				</ul>
+		</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+/***** testing css*/
+.main-content-wrapper h1 {
+	font-size: 60px;
+	text-align: center;
+}
+
+#page-one {
+	position: absolute;
+background-color: #c76262;
+
+width: 768px;
+height: 900px;
+}
+
+
+#page-two {
+	position: absolute;
+background-color: #6262c7;
+
+left: 768px;
+width: 768px;
+height: 900px;
+}
+
+
+#page-three {
+	position: absolute;
+background-color: #8dc762;
+
+left: 768px;
+width: 768px;
+height: 900px;
+}
+
+
+#page-four {
+	position: absolute;
+background-color: #c7b562;
+
+left: 768px;
+width: 768px;
+height: 900px;
+}

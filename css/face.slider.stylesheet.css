@@ -1,0 +1,64 @@
+body {
+width: 768px;
+height: 1024px;
+}
+/*.top {
+    margin: 0px;
+    padding: 0px;
+    height: 500px;
+    width: 500px;
+}*/
+
+.smileyFace {
+    /*position: absolute;*/
+
+/*    left: 100px;
+    top: 100px;*/
+    padding: 0px;
+
+    width: 350px;
+    /*background: green;*/
+    /*border: 1px solid #000;*/
+}
+
+.smiley-area {
+  
+}
+
+#a_slider {
+
+    left: 100px;
+    top: 10px;
+    /*position: absolute;*/
+
+
+}
+
+
+
+/*
+ui-slider: The track of the slider control. This element will additionally have a class name of ui-slider-horizontal or ui-slider-vertical depending on the orientation of the slider.
+ui-slider-handle: The slider handles.
+ui-slider-range: The selected range used when the range option is set. This element can additionally have a class of ui-slider-range-min or ui-slider-range-max if the range option is set to "min" or "max" respectively.
+Dependencies
+*/
+
+
+:focus {
+outline: none;
+}
+
+
+.ui-slider {
+      background-color: #8aceff;
+    width: 180px;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: #3a3c87;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+    background: #7072c4;
+}
+

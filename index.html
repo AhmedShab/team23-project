@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<!-- Front End Side Coded By Regan Petrie -->
+
+
+
+<!-- PAGE NUMBERS
+CALL: changePage(1);  to change page.
+function is in manager.js
+
+0.1 = Login
+0.2 = Registration
+1 = Homepage
+2 = Create Page
+3 = Search Page
+4 = Graph
+ -->
+
+
+<html><head>
+<title>Echo -- By Team23</title>
+<meta name="viewport" intial-scale='1.0', content="user-scalable=no, width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="img/icons/browser.ico">
+<!-- <meta name="viewport" intial-scale='1.0', content=""> -->
+<link rel="stylesheet" href="css/graph.css">
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+
+
+<!-- local Jquery -->
+
+<script  src="js/jquery/jquery.js"></script>
+<!-- <script src="js/modernizr.js"></script> -->
+
+<script type="text/javascript">
+jQuery(document).on("mobileinit", function() { jQuery.mobile.autoInitializePage = false;
+});</script>
+<script src="js/jquery/jquery.mobile-1.4.5.min.js"></script>
+
+<!-- local lib and tests -->
+<script  src="js/page-script.js"></script>
+<script  src="js/scaling-script.js"></script>
+<script  src="js/shake.js"></script>
+<script src="js/hashtag-cloud.js"></script>
+<script src="js/drawing-script.js"></script>
+<script src="js/manager.js"></script>
+<script src="js/create-page-manager.js"></script>
+<script src="js/register-page-manager.js"></script>
+<script src="js/graph.js"></script>
+
+
+</head>
+
+<body>
+<div id="wrapper">
+
+
+	<div class='black-fader'>
+		<section class="addHash-nav">
+			<img src="img/icons/addtag_01.png" id="showtag-btn" onclick="resetCustTag()">
+				<div id="custom-tag-section">
+					<img src="img/addtag_line2.png" id="addtag-line">
+					<input id="addtag-textarea" type="text" name="Title01" maxlength="17" placeholder="Custom Hashtag">
+				</div>
+		</section>
+
+		<div class="hashtag-box">
+			<img class="close" src="img/icons/delete_icon_white.png">
+			<h2>Friends</h2>
+			<h2>Work</h2>
+			<h2>Fun</h2>
+			<h2>School</h2>
+			<h2>Happy</h2>
+			<h2>Sport</h2>
+			<h2>Angry</h2>
+			<h2>Family</h2>
+
+		</div>
+			<p class="black-fader-error">Max hashtag limit reached</p>
+	</div>
+
+
+		<div class='navbar'>
+			<section id="nav-norm" style="display: none">
+				<img class='nav-logo' src="img/Logo_Final_Small.png">
+				<img class='nav-icon-settings' src="img/icons/logout_icon.png" onclick="logout()">
+			</section>
+			<!-- Navigation Search Bar -->
+			<div id="nav-search">
+				<form>
+				        <input type="text" id="nav-search-input" name="q" size="21" maxlength="120" value="Search for hashtag">
+				        <input type="button" value=">" id="nav-search-btn" onclick="loadSearchResults( $( '#nav-search-input' ).val() )">
+				</form>
+			</div>
+		</div>
+
+		<div id ='bottom-navbar'>
+			<ul>
+				<li><img class="nav-icon home-button" src="img/icons/home_icon.png"></li>
+				<li><img class="nav-icon create-button" src="img/icons/create_icon.png"></li>
+				<li><img class="nav-icon search-button" src="img/icons/history_icon.png"></li>
+				<li><img class="nav-icon graph-button" src="img/icons/graph_icon.png"></li>
+				<li><img class="nav-icon social-button" src="img/icons/social_icon.png"></li>
+			</ul>
+		</div>
+	<div class="white-fader"></div>
+
+	<!-- START OF PAGE ONE **HOME PAGE** -->
+	<div class="page content-wrapper" id="page-home">
+		<div class="home-hello-box">
+			<p  onclick="changePage(2)"> Hello <span id='username-display'>User</span>, have a great day! </p>
+		</div>
+
+
+		<div class="home-section-01">
+
+			<!-- First Display Memory Top Line -->
+			<div class='home-image-box home-image-half' id='home-image-box-01' >
+				<img id='img-01' src="img/stock/stock01.jpg">
+				<div class='home-date-half'>
+					<p id="home-date-month-01"> nov </p>
+					<p id="home-date-num-01"> 24 </p>
+				</div>
+			</div>
+			<!-- Second Display Memory Top Line -->
+			<div class='home-image-box home-image-half' id='home-image-box-02' >
+				<img id='img-02' src="img/stock/stock02.jpg">
+					<div class='home-date-half'>
+						<p id="home-date-month-02"> feb </p>
+						<p id="home-date-num-02"> 11 </p>
+					</div>
+			</div>
+		</div>
+
+		<div class="home-section-02">
+
+				<!-- Third Display Memory Bottom Line -->
+				<div class='home-image-box home-image-third' id='home-image-box-03' >
+					<img id='img-03' src="img/stock/stock06.jpg">
+					<div class='home-date-third'>
+						<p  id="home-date-month-03"> aug </p>
+						<p id="home-date-num-03"> 31 </p>
+					</div>
+				</div>
+
+				<!-- Fourth Display Memory Bottom Line -->
+				<div class='home-image-box home-image-third' id='home-image-box-04' >
+					<img id='img-04' src="img/stock/stock04.jpg">
+					<div class='home-date-third'>
+						<p id="home-date-month-04"> oct </p>
+						<p id="home-date-num-04"> 15 </p>
+					</div>
+				</div>
+
+				<!-- Fifth Display Memory Bottom Line -->
+				<div class='home-image-box home-image-third' id='home-image-box-05' >
+					<img id='img-05' src="img/stock/stock05.jpg">
+					<div class='home-date-third'>
+						<p id="home-date-month-05"> jan </p>
+						<p id="home-date-num-05"> 26 </p>
+					</div>
+				</div>
+		</div>
+
+
+	</div>
+
+
+	<!-- START OF PAGE TWO **CREATE PAGE** -->
+
+	<div class="page content-wrapper" id="page-create">
+		 <!-- MAIN CONTENT WRAPPER -->
+		 <div id="create-main-wrapper">
+		 	<div class="create-section-01">
+
+		 		<!-- START of top left section create page. Includes Title and Tags. -->
+		 		<div id="create-box-01">
+	 				<div class="title-section">
+	 					<div class="title-help-wrapper">
+		 					<h1 class="centre help-title-default"> Lets Get Started </h1>
+		 					<h2> Create a Memory Title </h2>
+		 					<p id="title-text-help">This is the first part of your memory creation.<br>Add a title for your memory!</p>
+		 					<button class='btn-shape getStarted-btn' onclick="createPageChange(2)"> Continue </button>
+	 					</div>
+			 				<input class="input" id="title1" type="text" name="Title01" maxlength="17" placeholder="Memory Title">
+		 			</div>
+
+		 			<div class="tag-cloud-wrapper">
+		 				<div class="tag-cloud-help">
+		 					<h1 class="centre help-title-default">Memory Cloud</h1>
+		 					<h2 class="centre ">Give your memories some #hashtags!</h2>
+		 					<h3 class="centre"> Hashtags are used to track your memories</h3>
+		 					<button class='btn-shape cloud-continue-btn' onclick="createPageChange(3)"> Continue </button>
+			 			</div>
+		 					<img id="input-tag-cloud" src="img/icons/hash_cloud.png">
+				 			<div id='choosen-cloud-text'></div>
+			 		</div>
+			 	</div>
+			 	<!-- End of top left Section Create Page -->
+			 	<!-- Start of top right Section Create Page Includes: Drawing Section -->
+				<div id="drawing-box" >
+
+					<!-- Drawing Help apears during creation stages. -->
+					<div class="drawing-help">
+						<h1 class="centre"> Mood Drawing </h1>
+						<h2 class="centre"> Have some fun, draw your mood! </h2>
+						<!-- <h3 class="centre"> Drawing is great way of expressing and <br> understanding your emotions. <br> Go nuts! </h3> -->
+		 				<button class='btn-shape drawing-help-btn' onclick="createPageChange(4)"> Ready to Continue? </button>
+					</div>
+
+					<!-- Content Holds the canvas -->
+				    <div id="content"></div>
+
+				    	<ul id="paint-slider">
+				    		<li><img id="undo-icon" src="img/icons/undo.png"></li>
+		    		   		<li> <img id="smiley-icon" src="img/icons/happy_icon.png"> </li>
+						</ul>
+
+				</div>
+			</div>
+
+			<div class="create-section-02">
+				<div class="book-help">
+					<h1 class="centre">Add some flavour! </h1>
+					<h2 class="centre">Leave a short story and add a pic! </h2>
+					<h3 class="centre"> </h3>
+			 		<button class='btn-shape book-help-btn' onclick="createPageChange(5)"> Ready to Continue? </button>
+				</div>
+
+				<div id="input-nav">
+					<ul>
+						<li><img class="input-icon camera-icon" src="img/icons/camera_icon.png"></li>
+						<li><img class="input-icon video-icon" src="img/icons/video_icon.png"></li>
+						<li><img class="input-icon mic-icon" src="img/icons/mic_icon.png"></li>
+					</ul>
+						<div class='input-nav-slider' id="underline" > </div>
+						<img id="input-head" src="img/input_nav_head.png">
+				</div>
+
+				<div id="book-section">
+					<div class="create-area-01">
+						<textarea class="input" id="text-area-01"type="text" name="text01" rows="4" cols="50"  placeholder="How was your day?"></textarea>
+						<textarea class="input " id="text-area-02"type="text" name="text01" rows="4" cols="50"  placeholder="What would make you feel better?"></textarea>
+					</div>
+					<div class="create-area-01" id='image-border-01'>
+						<img id="uploaded-img-01" src='#' src="Error.src" onerror="this.src='img/icons/white_space.jpg'" >
+                        <video id="player"></video>
+						<div class="input-selector-right" >
+							<!-- Work on this if possible. -->
+							<span><input class=" input create-upload"  id="iS-camera" onchange="readImage(event);" type="file" accept="image/*" capture="camera" ></span>
+							<span ><input class=" input create-upload" id="iS-video" onchange="readVideo(event);" type="file" accept="video/*capture=camcorder" ></span>
+						</div>
+					</div>
+				</div>
+
+			</div>  <!-- END MAIN CONTENT -->
+
+				<!-- Navigation -->
+				<div class="createpage-nav">
+					<img class="create-process-back" src="img/icons/back_arrow_01.png">
+					<img class="process-heart" src="img/icons/heart_icon_01.png">
+				</div>
+		</div>
+	</div>
+
+
+	<!-- START OF PAGE Three **Search PAGE** -->
+	<div class="page content-wrapper" id="page-search">
+		<div class="no-memories-warning centre">
+			<h1> Hold on there cowboy! </h1>
+			<h2> Before you search for memories, <br>you need to create a memory.</h2>
+			<br>
+			<p>Click <span id="highlight" onclick="changePage(2);">here</span> to create a memory</p> 
+		</div>
+
+		<img id="search-loading" src="img/hand_small.gif">
+
+		<!--  Memories spawn on load-content -->
+		<div id="load-content-wrapper" style="padding-top: 0px; margin-top: 70px">
+<!-- 			<div class='imgContainer'>
+				<div class='load-info-box' >
+							 <img class='load-smiley' src='img/stock/drawn_01.png' >
+						<div class='load-date-box'>
+							<p> </p>
+							<p> </p>
+						</div>
+						<div class='load-description-box'>
+							<h2>Loading...</h2>
+							<h3>#Fun #Hashtag </h3>
+						</div>
+						<img class="load-arrow" src="img/icons/right_arrow.png" onclick="retrieveMemory()">
+				</div>
+			</div> -->
+		</div>
+
+	</div>
+
+
+	<!-- START OF PAGE THREE- PART TWO-RETRIEVED **SEARCH-RETRIEVED PAGE** -->
+	<div class="page content-wrapper page" id="page-retrieved">
+		<div class="ret-content-wrapper">
+			<section class="ret-section-01 ">
+				<div class=" ret-box ret-box-01 ">
+					<h1 id="ret-title"> Loading... </h1>
+					<h3 id="ret-date">  </h3>
+					<img id='ret-smiley' src=''>
+				</div>
+
+				<div class=" ret-box ret-box-02 ">
+					<video id="ret-video" onclick="playVideo()"> </video>
+				</div>
+			</section>
+
+			<section class="ret-section-02">
+				<div class='ret-hashtag-box'>
+					<p id='ret-hashtags'> </p>
+				</div>
+
+				<section class="ret-book">
+					<div class="ret-box ret-box-03">
+						<p id='ret-text-01'> </p>
+					</div>
+					<div class="ret-box ret-box-04">
+						<img  id="ret-image" src="img/stock/stock07.jpg">
+					</div>
+				</section>
+			</section>
+		</div>
+	</div>
+
+
+
+	<!-- START OF PAGE FOUR **GRAPH PAGE** -->
+	<div class="content-wrapper page" id="page-graph">
+		<div id="content-main-wrapper-graph">
+			<div class="chart">
+				<h2 class="centre graph-title">Emotion Tracker</h2>
+				<table id="data-table" border="1" cellpadding="10" cellspacing="0" summary="">
+					<thead>
+						<tr id="date">
+							<td>&nbsp;</td>
+							<th scope="col"></th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr id="happy">
+							<!-- Potentially 5 Most Recent Days of Entry? -->
+							<th scope="row">Happy Memories</th>
+							<td id="h1"></td>
+							<td id="h2"></td>
+							<td id="h3"></td>
+							<td id="h4"></td>
+							<td id="h5"></td>
+
+						</tr>
+						<tr id="sad">
+							<th scope="row">Sad Memories</th>
+							<td id="s1"></td>
+							<td id="s2"></td>
+							<td id="s3"></td>
+							<td id="s4"></td>
+							<td id="s5"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!-- START OF PAGE FIVE **SOCIAL PAGE** -->
+	<div class="content-wrapper page" id="page-social">
+		<h1 class="centre"><br><br>We aren't making this. <br>
+		 Just a placeholder for future thoughts/developments<br><br> Also makes the navbar look nicer - regan</h1>
+	</div>
+
+
+	<!-- START OF LOGIN PAGE -->
+		<div id="login-wrapper" class="page">
+		<!-- <div class="white-fader"></div> -->
+		<!-- <div id=> -->
+
+				<img src="img/Logo_Final_Small.png" id="login-logo">
+
+
+			<div class="login-input-section" align="center">
+				<form>
+					<input class='login-inputs' id="login-username" type="text" name="username" placeholder="Username">
+					<input class='login-inputs' id="login-password" type="password" name="password" placeholder="Password">
+					<!-- <input class='login-inputs' id="login-submit01" type="submit" value="Submit" onclick="window.location.href = 'index.html'"> -->
+					<input class='login-inputs' id="login-submit01" value="Login" onclick="loginUser();">
+				</form>
+					<p id="wrong-pass"> You have entered a incorrect username or password, please try again</p>
+					<p onclick="changePage(0.2);" > <u>Sign up for Echo<u></p>
+					<p> Need Help?</p>
+			</div>
+
+		</div>
+
+
+	<!-- START OF REGISTER PAGE -->
+		<div id="register-wrapper" class="page">
+
+	
+					<!--  username, first name, last name, email, securtiy q and answer. pasword -->
+
+					<section class=" register-section register-get-started">
+						<div>
+							<h1>Join Echo</h1>
+							<p> By signing up, you agree to  Echo's <a onclick="registerPage(1.1)"> Terms and Conditions </a> and that you have read our <a href="">Privacy Policy</a>. You may receive SMS Notifications from Echo and can opt-out at any time.</p>
+							<input type="button" class="register-submit-btn white" value="Get Started" onclick="registerPage(2);">
+						</div>
+					</section>
+
+					<section class=" register-section register-terms">
+						<div>
+							<h1>Terms and Conditions</h1>
+							<p> By signing up, you agree to  Echo's <a href=""> Terms and Conditions </a> and that you have read our <a href="">Privacy Policy</a>. You may receive SMS Notifications from Echo and can opt-out at any time.</p>
+							<input type="button" class="register-submit-btn white" value="Get Started" onclick="registerPage(2);">
+						</div>
+					</section>
+					
+					
+
+					<section class="register-section register-page2">
+						<div>
+							<h1>Get Started</h1>
+							<input class='register-input' id="register-username" type="text" placeholder="Enter a username">
+							<input class='register-input' id="register-email" type="email" n placeholder="Enter your email">
+							<p> You'll use this username when logging in. Your email address will be use if you ever need to reset your password. </p>
+							<input type="button" class="register-submit-btn white" id="register-page2-btn" value="Get Started" onclick="registerPage(3);">
+						</div>
+					</section>
+
+					<section class="register-section register-page3">
+						<div>
+							<h1>Add a Password</h1>
+							<input class='register-input' id="register-password" type="password" placeholder="Enter your password">
+							<input class='register-input' id="register-password2" type="password"  placeholder="Re-enter you password">
+							<p> You'll use this username when logging in. Your email address will be use if you ever need to reset your password. </p>
+							<input type="button" class="register-submit-btn white" id="register-page2-btn" value="Continue" onclick="registerPage(4);">
+						</div>
+					</section>
+
+
+					<section class="register-section register-page4">
+						<div>
+							<h1>Choose a Security Question</h1>
+							<select id="sq-dropdown">
+								<option value="">Choose a Security Question</option>
+								<option value="Favourite Animal">Favourite Animal?</option>
+								<option value="Mother's Name">Mother's Name?</option>
+								<option value="Best Friend">Best Friend?</option>
+								<option value="Favourite  Place">Favourite  Place?</option>
+								<option value="Best app ever">Best app ever? (Echo)</option>
+							</select>
+							<input class='register-input' id="security-answer" type="text" name="password" placeholder="Enter your answer">
+							<p> This will be used to help you protect yourself from external threats. </p>
+							<input type="button" class="register-submit-btn white" id="register-page2-btn" value="Register Account" onclick="signUp();">
+						</div>
+					</section>
+
+<!--					<input class='login-inputs' id="securty-question" type="text" name="password" placeholder="security question"> -->
+
+		<!-- 			<input class='login-inputs' id="register-username" type="text" name="username" placeholder="Username">
+=======
+					<input class='login-inputs' id="register-username" type="text" name="username" placeholder="Username">
+>>>>>>> 94d53b859276baa6c2d0e3008bb512408a81a1a6
+					<input class='login-inputs' id="register-firstname" type="text" name="password" placeholder="first name">
+					<input class='login-inputs' id="register-lastname" type="text" name="password" placeholder="last name">
+					<input class='login-inputs' id="register-email" type="email" name="password" placeholder="email">
+					<input class='login-inputs' id="securty-question" type="text" name="password" placeholder="security question">
+					<input class='login-inputs' id="security-answer" type="text" name="password" placeholder="sequrity answer">
+					<input class='login-inputs' id="register-password" type="password" name="password" placeholder="Password"> -->
+
+<!-- 
+										<input class='login-inputs' id="login-submit02" value="Register" onclick=""> -->
+
+
+		</div>
+
+</div>
+
+<script type="text/javascript">
+
+var r;
+var stat = new Object();
+var happy = 0;
+var sad = 0;
+var date = [];
+var emo = [];
+var emotHappy = [];
+var emotSad = [];
+var monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+];
+
+function checkTime(day){
+    day.forEach(function(d){
+        var day = new Date(d.creationdate);
+        var dd = day.getDate()+" "+monthNames[day.getMonth()]+" "+day.getFullYear();
+        if(date.indexOf(dd)===-1){
+            date.push(day.getDate()+" "+monthNames[day.getMonth()]+" "+day.getFullYear());
+        }
+    });
+
+    date.forEach(function(d){
+        stat[d]={
+            happy:0,
+            sad: 0
+        };
+//        stat[d]["sad"] = 0;
+    });
+}
+
+
+//method for retreving stats about emotion
+function getStats(){
+	//call server with ajax call. 
+   $.ajax({
+		dataType: 'json',
+		method: 'GET',
+		url: "https://team23-project.herokuapp.com/emotionCount/"+userInfo.userid
+	})
+	.done(function(data){
+//		alert(data);
+		r = data;
+               checkTime(data);
+
+		// replay from server is in data. its an array of memories. What if there is <5 returned. ?!?!?
+		data.forEach(function (memory, index){
+			//for each element in the array. assign it to the correct place. 
+			// alert(data.circlecolor);
+			// alert(data.creationdate);
+            var d = new Date(memory.creationdate);
+
+
+                if (memory.circlecolor === '0') {
+                    sad++;
+                    stat[d.getDate()+" "+monthNames[d.getMonth()]+" "+d.getFullYear()]["sad"]++;
+                }
+                if (memory.circlecolor === '1') {
+                    happy++;
+                    stat[d.getDate()+" "+monthNames[d.getMonth()]+" "+d.getFullYear()]["happy"]++;
+                }
+
+
+
+			// $( "#home-image-box-0"+(index+1) ).css("visible", "true" );
+			// $( "#home-image-box-0"+(index+1)  ).attr("onclick", "retrieveMemory("+memory.memoryid+")");
+			
+			// //set internal values. 
+			// $( "#img-0"+(index+1) ).attr("src", memory.image);
+			
+			// //get and format dates.. 
+			// var dispDate = new Date(memory.creationdate);
+			// $( "#home-date-month-0"+(index+1) ).html(dispDate.toDateString().split(" ")[1]);
+			// $( "#home-date-num-0"+(index+1) ).html(dispDate.getDate());
+		});
+		// $('#happy').append('<td>'+ happy +'</td>');
+		// $('#sad').append('<td>'+ sad +'</td>');
+         var i =1;
+
+
+         for(var d in stat){
+
+             $('#h'+i).html(stat[d].happy);
+             $('#s'+i).html(stat[d].sad);
+             i++;
+             emotHappy.push(stat[d].happy);
+             emotSad.push(stat[d].sad);
+         }
+        emo = emotHappy.concat(emotSad);
+
+		drawGraph();
+
+	})
+	.fail(function(jgXHR, textStatus, errorThrown){
+		alert('Server Connection Error');			//let user know something is wrong. 
+		console.log('ERROR: '+textStatus+ errorThrown);
+	});	
+}
+
+
+
+
+
+// Function Comment. Shake to Refresh Home Screen - Regan
+var myShakeEvent = new Shake({
+    threshold: 2
+
+});
+  // start listening to device motion
+myShakeEvent.start();
+// register a shake event
+window.addEventListener('shake', shakeEventDidOccur, false);
+function shakeEventDidOccur () {
+        // if user shakes do this
+	if (currentPage ==1) {
+		$(".white-fader").fadeTo(1000, 1, function () {
+		//Changes made when user shakes device.
+		$('#page-home').children().find('*').removeAttr("style");
+		$(".white-fader").fadeTo(1000, 0);
+		}); 
+    }
+}
+
+function createEmotionFace(face, title){
+    var img = '/user/image/'+title+'/'+face;
+    var f = new Folder(img);
+    if (!f.exists) {
+        f.create();
+        return img;
+    }
+
+}
+
+function createImage(image, title){
+    var img = '/user/image/'+title+'/'+image;
+    var f = new Folder(img);
+    if (!f.exists) {
+        f.create();
+        return img;
+    }
+
+}
+
+//grabs the selected image appends it to an img tag
+//filereader loads it to the img tag
+function readImage(event) {
+    var selectedFile = event.target.files[0];
+    var reader = new FileReader();
+
+    var imgtag = document.getElementById("uploaded-img-01");
+//    imgtag.title = selectedFile.name;
+
+    reader.onload = function(event) {
+        imgtag.src = event.target.result;
+        reader.readAsDataURL(selectedFile);
+    	alert(imgtag.src);
+    };
+        	
+    
+
+    
+}
+
+function playVideo(){
+	var player = document.getElementById('ret-video');
+	player.load();
+    player.play();
+}
+
+// function readVideo (event) {
+
+//     var file = event.target.files[0],
+//             startByte = 0,
+//             endByte = file.size-1;
+
+//     var url;
+//     console.log('readBlob():', file, startByte, endByte);
+
+//     var reader = new FileReader();
+//     reader.onloadend = function (evt) {
+//         if (evt.target.readyState == FileReader.DONE) {
+// //            callback(evt.target.result);
+// 			var canvas = document.getElementById('canvas');
+// 			var ctx = canvas.getContext('2d');
+// // var video = document.getElementById('video');
+
+
+//             var player = document.getElementById('player');
+// 			canvas.width = player.width;
+//   			canvas.height = player.height;
+
+//   			ctx.drawImage(player, 0, 0, player.width, player.height);
+
+
+//             url = window.URL.createObjectURL(file);
+//             player.src = url;
+//             alert(url);
+//             // var base64data = reader.result;
+//             // alert(base64data );
+//             player.load();
+//             player.play();
+//             var blob = file.slice(startByte, endByte);
+//     		FileReader.readAsBinaryString(blob);
+//     		base64data = "data:video/webm;base64,"+btoa(reader.result);                
+//             console.log(base64data );
+//                 // alert(canvas.toDataURL(""))
+//         }
+// //        reader.readAsDataURL(url);
+//     }
+    
+//   //   reader.onloadend = function() {
+               
+//   // }
+// }
+var base64data;
+
+
+/* Fuction comment. it uploads a memory. */
+function submitMemory(){
+changePage(3);
+$(".process-heart").css('display', 'none');
+tag_name = ""; // resets tag list
+for (i = 0; i < hashtagCount; i++){
+  		tag_name += $('#choosen-cloud-text > p').eq(i).text() + " "; 		
+		}
+    //get all the info into vairables. 
+	var title = $("#title1").val();
+    var text1 = $("#text-area-01").val();
+    var text2 = $("#text-area-02").val(); //text input for if user is sad
+
+    //Make a canvas element and attach the uploaded image to it then grab the dataURL from the canvas. to send to DB.
+	// var imageURL = $("#uploaded-img-01").attr("src");
+//	src a reference to the image element
+	var imageElement = document.getElementById("uploaded-img-01");
+	alert(imageElement.src);
+	var imgCanvas = document.createElement("canvas"),
+        imgContext = imgCanvas.getContext("2d");
+     // Make sure canvas is as big as the picture
+    imgCanvas.width = imageElement.width;
+    imgCanvas.height = imageElement.height;
+     // Draw image into canvas element
+    imgContext.drawImage(imageElement, 0, 0, imageElement.width, imageElement.height);
+    var imageURL = imgCanvas.toDataURL("image/png");
+
+
+    //get video
+    // var video = $("#player").attr("src");
+    alert(imageURL);
+
+    var emotionFace = canvas.toDataURL('image/png');
+    var tag = 1;
+    var hashtag_list = tag_name;	 //list of all the hastags selcted
+    var happyIndicator = userHappy;		//If the user happy or sad? used for drawing bground and text-02 display.
+
+
+    $.ajax({
+    	dataType: "json",
+		method: "POST",
+		url: 'https://team23-project.herokuapp.com/memory/store',
+    	data: {
+    		"title": title,
+    		"text": text1,
+    		"userid": userInfo.userid,
+    		"image": imageURL,
+    		"emotion": emotionFace,
+    		"tagid": tag,
+    		"hashtags": hashtag_list,
+    		"textSad": text2,
+    		"circleColor": happyIndicator,
+    		"token": userInfo.token
+    		// "video": base64data
+    	}
+    }).done(function(data){
+		 alert("Successfully uploaded... " + data.image);	//Maybe put this back on testing.
+	}).fail(function(jgXHR, textStatus, errorThrown){
+		alert("Server Connection Error: uploading data" + data);			//let user know something is wrong. 
+		console.log("ERROR: "+textStatus+ errorThrown);
+	});
+}
+
+/* function loadMemoryById(memoryid)
+//Loads a single Memory from the database. Displays it in the various places. 
+//calls GET /memory/get/:id - API interface
+*/
+function loadMemoryById(memoryid){
+	 //make ajax request to get data ... then uses all the data from server to populate elements on page. 
+	//setup request parameters.. include the memory id that we want. 
+	$.ajax({
+			dataType: 'json',
+			method: 'GET',
+			url: 'https://team23-project.herokuapp.com/memory/get/' + memoryid+"/"+userInfo.token    	
+	})
+	.done(function(memoryFromServer){
+		//server returns an array of 1 element.  so de-array it. 
+		memoryFromServer = memoryFromServer[0];		
+		dateToDisplay = new Date(memoryFromServer.creationdate);		
+		document.getElementById("ret-title").innerHTML = memoryFromServer.title;
+		document.getElementById("ret-date").innerHTML = dateToDisplay.toDateString();
+		document.getElementById("ret-smiley").setAttribute('src', memoryFromServer.emotion);
+		if(memoryFromServer.circlecolor != 0){  //set happy style or sad dependant on value.. 
+			document.getElementById("ret-smiley").setAttribute('style', "background-size: cover; background-image: url(img/smiley/drawing-happy.png);");
+		} else {
+			document.getElementById("ret-smiley").setAttribute('style', "background-size: cover; background-image: url(img/smiley/drawing-sad.png);");
+		}
+		document.getElementById("ret-hashtags").innerHTML = memoryFromServer.hashtags;
+		document.getElementById("ret-text-01").innerHTML = memoryFromServer.text;
+		document.getElementById("ret-image").setAttribute('src', memoryFromServer.image);
+		alert(memoryFromServer.video);
+		if (memoryFromServer.video != undefined) {
+			document.getElementById("ret-video").setAttribute('src', memoryFromServer.video);
+		};
+		
+	})
+	//Manage failures.
+	.fail(function(jgXHR, textStatus, errorThrown){
+		alert('Server Connection Error');			//let user know something is wrong. 
+		console.log('ERROR: '+textStatus+ errorThrown);
+	});	
+} //end loadMemoryById
+
+
+/* Fuction comment. it loads the memory. ->_Regan */
+// this is called from manager.js ----- if page = 3   ->_Regan
+// loads a users timeline. 
+var lowestMemoryIDloaded = 99999999;	//start high so that every call lowers it slightly. 
+function loadTenMoreMemoriesFromDB() {
+	loadMemoriesFromDB();
+};
+function loadMemoriesFromDB(){
+	//userID comes from userInfo object. 
+	//make ajax request to get data ... generate a div like template below for each of them
+	var resultantHTML = '';	//store the HTML containing all the memories. 
+	$.ajax({
+			dataType: 'json',
+			method: 'GET',
+			url: "https://team23-project.herokuapp.com/memory/get/timeline/" + userInfo.userid + "/" + userInfo.token +"?start="+lowestMemoryIDloaded   	
+	}).done(function(data){
+		data.forEach(function (memory, index){
+			//remember the lowestIDloaded incase we want to request moar. 
+			if(memory.memoryid < lowestMemoryIDloaded) { lowestMemoryIDloaded = memory.memoryid; }
+			var DateToDisplay = new Date(memory.creationdate);
+			
+			var dayNumber = DateToDisplay.getDate();
+			var monthStr = DateToDisplay.toDateString().split(" ")[1];
+		
+			resultantHTML += '<div class="imgContainer" >';
+			resultantHTML += '<div class="load-info-box">';
+			// resultantHTML += '<img class="load-smiley" src="'+ memory.emotion +'">';
+			if(memory.circlecolor != 0){
+			resultantHTML += '<img class="load-smiley" src="'+ memory.emotion +'"  style="background-image: url(&quot;img/smiley/drawing-happy.png&quot;)">';
+			} else {
+			resultantHTML += '<img class="load-smiley" src="'+ memory.emotion +'" style="background-image: url(&quot;img/smiley/drawing-sad.png&quot;)">';	
+			}
+			resultantHTML += ' <div class="load-date-box">';
+			resultantHTML += '<p>'+monthStr+'</p><p>'+dayNumber+'</p></div>';
+			resultantHTML += '<div class="load-description-box"><h2>'+ memory.title +' </h2> <h3>'+ memory.hashtags +' </h3></div>';
+			resultantHTML += '<img class="load-arrow" src="img/icons/right_arrow.png" onclick="retrieveMemory('+memory.memoryid+')">';
+			resultantHTML += '</div></div>';
+		});
+		//add the resultantHTML to the content-wrapper element.
+		//DEBUG alert(resultantHTML);
+		$('#search-loading').css('display', 'none');
+		if(resultantHTML=""){
+		   /*display no messages yet notice. */ 
+		   $('.no-memories-warning').css("display", 'block');
+		} else {
+			 $('.no-memories-warning').css("display", 'none');
+		}
+		$('#load-content-wrapper').append(resultantHTML);
+		//$('#load-content-wrapper').html(resultantHTML);
+
+	}).fail(function(jgXHR, textStatus, errorThrown){
+		alert('Server Connection Error');			//let user know something is wrong. 
+		console.log('ERROR: '+textStatus+ errorThrown);
+	});	
+}
+
+// SEARCH ajax call. provide search string.   
+// memorySet could be the result of a search or simply the default listing(first ten). 
+function loadSearchResults(searchString){
+	var resultantHTML = '';	//store the HTML containing all the memories. 
+	$.ajax({ dataType: 'json', method: 'GET', 
+			 url: "https://team23-project.herokuapp.com/search/"+searchString+"/" + userInfo.userid +"?token="+userInfo.token
+	}).done(function(memorySet){
+			memorySet.forEach(function (memory, index){
+				var DateToDisplay = new Date(memory.creationdate);
+				var dayNumber = DateToDisplay.getDate();
+				var monthStr = DateToDisplay.toDateString().split(" ")[1];
+			//Build a new memory box. 
+				resultantHTML += '<div class="imgContainer" >';
+				resultantHTML += '<div class="load-info-box">';
+				// resultantHTML += '<img class="load-smiley" src="'+ memory.emotion +'">';
+				if(memory.circlecolor != 0){
+				resultantHTML += '<img class="load-smiley" src="'+ memory.emotion +'"  style="background-image: url(&quot;img/smiley/drawing-happy.png&quot;)">';
+				} else {
+				resultantHTML += '<img class="load-smiley" src="'+ memory.emotion +'" style="background-image: url(&quot;img/smiley/drawing-sad.png&quot;)">';	
+				}
+				resultantHTML += ' <div class="load-date-box">';
+				resultantHTML += '<p>'+monthStr+'</p><p>'+dayNumber+'</p></div>';
+				resultantHTML += '<div class="load-description-box"><h2>'+ memory.title +' </h2> <h3>'+ memory.hashtags +' </h3></div>';
+				resultantHTML += '<img class="load-arrow" src="img/icons/right_arrow.png" onclick="retrieveMemory('+memory.memoryid+')">';
+				resultantHTML += '</div></div>';
+			});
+			//add the resultantHTML to the content-wrapper element.
+			//DEBUG alert(resultantHTML);
+			$('#search-loading').css('display', 'none');
+			if(memorySet.length==0){
+			   /*display no messages yet notice. */ 
+			   $('#load-content-wrapper').html("No results found. Try single word searches for best luck.");
+			}
+			$('#load-content-wrapper').html(resultantHTML);	//always bang it on top of whatever is there. its the search results. 
+			
+	}).fail(function(jgXHR, textStatus, errorThrown){
+		alert('Server Connection Error');			//let user know something is wrong. 
+		console.log('ERROR: '+textStatus + errorThrown);
+	});	
+}
+
+
+
+
+/* Loads just the images for the home page screen. 
+ *
+ *
+*/
+//Load user's content. 5 most recent memories that are happy ... 
+function loadUserMemories(){
+//call server with ajax call. 
+   $.ajax({
+		dataType: 'json',
+		method: 'GET',
+		url: "https://team23-project.herokuapp.com/memory/get/homepage/" + userInfo.userid + "/happy/5/"+userInfo.token   	
+	})
+	.done(function(data){
+				// alert(data);
+		$('#username-display').html(userInfo.username);
+		// replay from server is in data. its an array of memories. What if there is <5 returned. ?!?!?
+		data.forEach(function (memory, index){
+			//for each element in the array. assign it to the correct place. 
+			//its a bit hacky.. 
+			//turn on high level element. and set its on click to goto load.html place.  
+			$( "#home-image-box-0"+(index+1) ).css("visible", "true" );
+			$( "#home-image-box-0"+(index+1)  ).attr("onclick", "retrieveMemory("+memory.memoryid+")");
+			
+			//set internal values. 
+			$( "#img-0"+(index+1) ).attr("src", memory.image);
+			
+			//get and format dates.. 
+			var dispDate = new Date(memory.creationdate);
+			$( "#home-date-month-0"+(index+1) ).html(dispDate.toDateString().split(" ")[1]);
+			$( "#home-date-num-0"+(index+1) ).html(dispDate.getDate());
+		});
+	})
+	.fail(function(jgXHR, textStatus, errorThrown){
+		alert('Server Connection Error');			//let user know something is wrong. 
+		console.log('ERROR: '+textStatus+ errorThrown);
+	});	
+}
+
+
+
+//*Retrieved Memory Function. This is called when the user clicks the arrow for the memory.
+function retrieveMemory(id) { 
+	console.log("Go To Memory"+ id);
+	changePage(3.5);	//displays the retrieve page divs...
+	loadMemoryById(id);
+}
+
+//Creates an ajax object with username and password and blasts it at the server stores the token returned. 
+// or displays the login fail object.
+//global token storage on client.
+var userInfo = {
+	  user_LoggedIn: false,
+	  token:"",
+	  userid:"",
+	  username:""
+
+};
+//assume user_LoggedIn = false;
+function loginUser() {
+	$.ajax({
+		dataType: 'json',
+		method: 'POST',
+		url: 'https://team23-project.herokuapp.com/login',
+		data: {
+			username: $("#login-username").val(),
+			password: $("#login-password").val()
+		}
+	})
+			.done(function (data) {
+				userInfo.token = data.token; 	//set global to what server sent.
+				userInfo.user_LoggedIn = true; 	// set the boolean to true.
+				user_LoggedIn = true;
+				userInfo.userid = data.userID;
+				userInfo.username = data.username;
+				changePage(1); 		//goto home page.
+			})
+			.fail(function (jgXHR, textStatus, errorThrown) {
+				//alert('URL not found.');			//let user know something is wrong.
+			$("#wrong-pass").fadeTo(1000,0.7).delay(2000).fadeTo(1000,0);
+				console.log('ERROR: ' + textStatus + errorThrown);
+			});
+
+}
+
+
+function signUp() {
+	$.ajax({
+		dataType: 'json',
+		method: 'POST',
+		url: 'https://team23-project.herokuapp.com/register',
+		data: {
+			username: $('#register-username').val(),
+			firstname: $('#register-firstname').val(),
+			lastname: $('#register-lastname').val(),
+			password: $('#register-password').val(),
+			email: $('#register-email').val(),
+			securityQuestion: {
+				q: $('#sq-dropdown').val(),
+				a: $('#security-answer').val()
+			}
+		}
+	})
+			.done(function (data) {
+				alert("Congratulation " + data.username + ", your account has been created successfully");
+				changePage(0.1);	// take the user to login page
+			})
+
+			.fail(function (jgXHR, textStatus, errorThrown) {
+				//alert('URL not found.');			//let user know something is wrong.
+				alert(errorThrown);
+				console.log('ERROR: ' + textStatus + errorThrown);
+				// take keep the user at the signup page
+			});
+}
+
+function logout() {
+	$.ajax({
+		dataType: 'json',
+		method: 'POST',
+		url: 'https://team23-project.herokuapp.com/logout',
+		data: {
+			token: userInfo.token,
+			userId: userInfo.userid
+		}
+	})
+			.done(function (data) {
+				userInfo.token = null;
+				userInfo.user_LoggedIn = false;
+				user_LoggedIn = false;
+				changePage(0.1);	// take the user back to login page
+			})
+
+			.fail(function (jgXHR, textStatus, errorThrown) {
+				//alert('URL not found.');			//let user know something is wrong.
+				alert(errorThrown);
+				console.log('ERROR: ' + textStatus + errorThrown);
+				// take keep the user at the signup page
+			});
+}
+
+
+</script>
+
+
+</body>
+
+</html>

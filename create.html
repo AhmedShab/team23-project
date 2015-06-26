@@ -1,0 +1,288 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+<title>Create</title>
+<meta name="viewport" intial-scale='1.0', content="user-scalable=no, width=device-width, initial-scale=1">
+<!-- <meta name="viewport" intial-scale='1.0', content=""> -->
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+
+
+
+<!-- local Jquery -->
+
+
+<script  src="js/jquery/jquery.js"></script>
+<!-- <script src="js/modernizr.js"></script> -->
+
+<script type="text/javascript">
+jQuery(document).on("mobileinit", function() { jQuery.mobile.autoInitializePage = false;
+});</script>
+<script src="js/jquery/jquery.mobile-1.4.5.min.js"></script>
+<script src='js/jquery/jquery-ui.js'></script>
+<script src='js/jquery/jquery.ui.touch-punch.min.js'></script>
+
+<!-- local lib and tests -->
+<script  src="js/page-script.js"></script>
+<script src="js/hashtag-cloud.js"></script>
+<script src="js/drawing-script.js"></script>
+<script src="js/create-page-manager.js"></script>
+
+</head>
+
+<body>
+<div id="wrapper">
+	<div class='black-fader'>
+	<section class="addHash-nav">
+		<img src="img/icons/addtag_01.png" id="showtag-btn" onclick="resetCustTag()">
+		<div id="custom-tag-section">
+		<img src="img/addtag_line2.png" id="addtag-line">
+		<input id="addtag-textarea" type="text" name="Title01" maxlength="17" placeholder="Custom Hashtag">
+		</div>
+	</section>
+		<div class="hashtag-box">
+			<img class="close" src="img/icons/delete_icon_white.png">
+			<h2>Friends</h2>
+			<h2>Work</h2>
+			<h2>Fun</h2>
+			<h2>School</h2>
+			<h2>Happy</h2>
+			<h2>Sport</h2>
+			<h2>Angry</h2>
+			<h2>Family</h2>	
+
+		</div>
+			<p class="black-fader-error">Max hashtag limit reached</p>
+	</div>
+		<div class='navbar'>
+			<img class='nav-logo' src="img/Logo_Final_Small.png">
+			<img class="nav-icon-settings" src="img/icons/settings_icon.png" onclick="window.location.href = 'loginScreen.html';">
+		</div>
+
+		<div id ='bottom-navbar'>
+			<ul>
+
+				<li>
+					<img class="nav-icon home-button" src="img/icons/home_icon.png">
+				</li>	
+
+				<li>
+					<img class="nav-icon create-button" src="img/icons/create_icon.png">		
+				</li>	
+
+				<li>
+					<img class="nav-icon history-button" src="img/icons/history_icon.png">
+				</li>
+
+				<li>
+					<img class="nav-icon history-button" src="img/icons/graph_icon.png">
+				</li>
+
+			</ul>
+		</div>	
+	<div class="white-fader"></div>
+
+	<div class="content-wrapper">
+		 
+
+		 <!-- MAIN CONTENT WRAPPER -->
+		 <div id="content-main-wrapper">
+		 	<div class="create-section-01">
+
+			 		<div id="create-box-01">
+			 				<div class="title-section">
+			 					<div class="title-help-wrapper">
+				 					<h1 class="centre help-title-default"> Lets Get Started </h1>
+				 					<h2> Create a Memory Title </h2>
+
+				 					<p id="title-text-help">This is the first part of your memory creation. <br>
+				 						Add a title for your memory!</p>
+				 					<button class='btn-shape getStarted-btn' onclick="createPageChange(2)"> Continue </button>
+
+				 					 
+			 					</div>
+
+				 				<input class="input" id="title1" type="text" name="Title01" maxlength="17" placeholder="Memory Title">
+				 			</div>
+
+				 			<div class="tag-cloud-wrapper">
+					 				<div class="tag-cloud-help">
+					 					<h1 class="centre help-title-default">Memory Cloud</h1>
+					 					<h2 class="centre ">Give your memories some #hashtags!</h2>
+					 					<h3 class="centre"> Hashtags are used to track your memories</h3>
+					 					<button class='btn-shape cloud-continue-btn' onclick="createPageChange(3)"> Continue </button>
+
+						 			</div>
+					 			<img id="input-tag-cloud" src="img/icons/hash_cloud.png">
+					 			<div id='choosen-cloud-text'>
+				 					<!-- Testing hashtags to see positioning -->
+				 			<!-- <p> Hashtag 1 </p>
+				 			<p> Hashtag 2 </p>
+				 			<p> Hashtag 3 </p>
+				 			<p> Hashtag 4 </p> -->
+				 			<!-- <p> Hashtag 5 </p>
+				 			<p> Hashtag 6 </p> -->
+				 			</div>
+				 		</div>
+
+			 		</div>
+
+			 	<!-- 	<div class="focus-element">
+			 		</div>
+		 -->
+						<div id="drawing-box" >
+							<div class="drawing-help">
+								<h1 class="centre"> Mood Drawing </h1>
+								<h2 class="centre"> Have some fun, draw your mood! </h2>
+								<!-- <h3 class="centre"> Drawing is great way of expressing and <br> understanding your emotions. <br> Go nuts! </h3> -->
+				 				<button class='btn-shape drawing-help-btn' onclick="createPageChange(4)"> Ready to Continue? </button>
+							</div>
+
+						    <div id="content">
+						    </div>
+									    
+						    	<ul id="paint-slider">
+						    		<li><img id="undo-icon" src="img/icons/undo.png"></li>
+				    		   		<li> <img id="smiley-icon" src="img/icons/happy_icon.png"> </li>
+								</ul>
+
+						</div>
+					</div>
+
+				<div class="create-section-02">
+					<div class="book-help">
+						<h1 class="centre">Add some flavour! </h1>
+						<h2 class="centre">Leave a short story and add a pic! </h2>
+						<h3 class="centre"> </h3>
+				 		<button class='btn-shape book-help-btn' onclick="createPageChange(5)"> Ready to Continue? </button>
+					</div>
+
+					<div id="input-nav">
+						<ul>
+
+							
+							<li>
+								<img class="input-icon camera-icon" src="img/icons/camera_icon.png">
+							</li>	
+
+							<li>
+								<img class="input-icon video-icon" src="img/icons/video_icon.png">
+							</li>
+
+
+							<li>
+								<img class="input-icon mic-icon" src="img/icons/mic_icon.png">
+							</li>	
+
+						</ul>
+							<div class='input-nav-slider' id="underline" > </div>
+						<img  id="input-head" src="img/input_nav_head.png">
+					</div>
+
+					<div id="book-section">
+						<div class="create-area-01">
+							<textarea class="input" id="text-area-01"type="text" name="text01" rows="4" cols="50"  placeholder="How was your day?"></textarea>
+							<textarea class="input " id="text-area-02"type="text" name="text01" rows="4" cols="50"  placeholder="What would make you feel better?"></textarea>
+						</div>
+						<div class="create-area-01" id='image-border-01'>
+							
+							<img id="uploaded-img-01" src='#' src="Error.src" onerror="this.src='img/icons/white_space.jpg'" >
+
+							<div class="input-selector-right" >
+																<!--  input active goes on first input once page is loaded -->
+								<span><input class=" input create-upload input-active"  id="iS-camera" onchange="readURL(this);" type="file" accept="image/*" capture="camera" ></span>
+								<span id="iS-video"><input class=" input create-upload" onchange="readURL(this);" type="file" accept="image/*" capture="camera" ></span>
+							</div>
+						</div>
+					</div>
+
+				</div>  <!-- END MAIN CONTENT -->
+
+				<div class="create-after-section">
+					<h1 class="centre">Your Memory has been stored.</h1>
+					<h2 class="centre">Please choose an options to view,<br> or create a new memory</h2>
+					<button class="after-btn">Create a memory</button>
+					<button class="after-btn">Search for a memory</button>
+					<button class="after-btn" onclick="window.location.href = 'graph.html';">View Memory Stats</button>
+				</div>
+
+				<div class="createpage-nav"> 
+					<img class="create-process-back" src="img/icons/back_arrow_02.png"> 
+					<img class="process-heart" src="img/icons/heart_icon_01.png"> 
+				</div>
+
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+
+/* Fuction comment. it uploads a memory. */
+function submitMemory(){
+createPageChange(6);
+$(".process-heart").css('display', 'none');
+
+tag_name = ""; // resets tag list
+for (i = 0; i < hashtagCount; i++){
+  		tag_name += $('#choosen-cloud-text > p').eq(i).text() + " "; 		
+		}
+
+    //get all the info into vairables. 
+	var title = $("#title1").val();
+    var text1 = $("#text-area-01").val();
+    var text2 = $("#text-area-02").val(); //text input for if user is sad
+
+    //var userid = ;
+	var imageURL = "http://www.google.com/example.jpg";
+    var emotionFace = canvas.toDataURL('image/png');
+    var tag = 1;
+    var hashtag_list = tag_name;	 //list of all the hastags selcted
+    var happyIndicator = userHappy;		//If the user happy or sad? used for drawing bground and text-02 display.
+
+    $.ajax({
+    	dataType: "json",
+		method: "POST",
+		url: 'https://team23-project.herokuapp.com/memory/store',
+    	data: {
+    		"title": title,
+    		"text": text1,
+    		"userid": 1,
+    		"image": imageURL,
+    		"emotion": emotionFace,
+    		"tagid": tag,
+    		"hashtags": hashtag_list,
+    		"textSad": text2,
+    		"circleColor": happyIndicator
+
+    	}
+    }).done(function(data){
+		// alert("Successfully uploaded... " + data);	//Maybe put this back on testing.
+	}).fail(function(jgXHR, textStatus, errorThrown){
+		alert("Server Connection Error");			//let user know something is wrong. 
+		console.log("ERROR: "+textStatus+ errorThrown);
+	});
+
+}
+
+/* Fuction comment. */
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#uploaded-img-01')
+                    .attr('src', e.target.result)
+                    
+            };
+            $('.input-selector-right').css("display", "none")
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+   function resetCustTag () {
+    }
+
+</script>
+
+</body>
+</html>

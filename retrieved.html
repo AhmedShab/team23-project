@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html><head>
+<title>TestingPage</title>
+<meta name="viewport" intial-scale='1.0', content="user-scalable=no, width=device-width, initial-scale=1">
+<!-- <meta name="viewport" intial-scale='1.0', content=""> -->
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+
+
+
+<!-- local Jquery -->
+
+<script  src="js/jquery/jquery.js"></script>
+<!-- <script src="js/modernizr.js"></script> -->
+<script src="js/hammer.min.js"></script>
+
+<script type="text/javascript">
+jQuery(document).on("mobileinit", function() { jQuery.mobile.autoInitializePage = false;
+});</script>
+<script src="js/jquery/jquery.mobile-1.4.5.min.js"></script>
+
+<!-- local lib and tests -->
+<script  src="js/page-script.js"></script>
+
+
+</head>
+
+<body>
+<div id="wrapper">
+		<div class='navbar'>
+			<img class='nav-logo' src="img/Logo_Final_Small.png">
+			<img class="nav-icon-settings" src="img/icons/settings_icon.png">
+		</div>
+
+		<div id ='bottom-navbar'>
+			<ul>
+
+				<li>
+					<img class="nav-icon home-button" src="img/icons/home_icon.png">
+				</li>	
+
+				<li>
+					<img class="nav-icon create-button" src="img/icons/create_icon.png">		
+				</li>	
+
+				<li>
+					<img class="nav-icon history-button" src="img/icons/history_icon.png">
+				</li>
+
+				<li>
+					<img class="nav-icon graph-button" src="img/icons/graph_icon.png">
+				</li>
+
+			</ul>
+		</div>	
+<div class="white-fader"></div>
+	<div class="ret-content-wrapper">
+		<section class="ret-section-01 ">
+			<div class=" ret-box ret-box-01 ">
+				<h1 id="ret-title"> Memory Title </h1>
+				<h3 id="ret-date"> 14 February 2015 </h3>
+				<img id='ret-smiley' src='img/stock/drawn_01.png'>	
+			</div>
+
+			<div class=" ret-box ret-box-02 ">
+				<p style="margin: 100px"> Possibly a quote? </p>
+			</div>
+
+		</section>
+
+		<section class="ret-section-02">
+			<div class='ret-hashtag-box'>
+				<p id='ret-hashtags'> #Fun #Yay #Wewhoo </p>
+			</div>
+
+			<section class="ret-book">
+				<div class="ret-box ret-box-03"> 
+					<p id='ret-text-01'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque eleifend orci non faucibus. Pellentesque sed tristique elit, id porttitor nisi	</p>					
+				</div>
+				<div class="ret-box ret-box-04">
+					<img  id="ret-image" src="img/stock/stock07.jpg">					
+				</div>
+			</section>
+		</section>
+
+	</div>
+</div>
+
+</body>
+
+</html>

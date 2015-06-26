@@ -1,0 +1,19 @@
+{
+  "name": "Team23-Echo",
+  "version": "0.0.1",
+  "description": "Main project for Echo development",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": "git@heroku.com:team23-project.git",
+  "dependencies": {
+    "bcrypt": "^0.8.3",
+    "body-parser": "^1.12.4",
+    "cors": "^2.6.0",
+    "express": "^4.12.3",
+    "hat": "0.0.3",
+    "morgan": "^1.6.0",
+    "pg": "^4.3.0",
+    "pg-native": "^1.8.1"
+  }
+}

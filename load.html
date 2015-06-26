@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+
+<!-- Originally Coded by April,  Redesigned by Regan -->
+
+<html><head>
+<title>TestingPage</title>
+<meta name='viewport' intial-scale='1.0', content='user-scalable=no, width=device-width, initial-scale=1'>
+<!-- <meta name='viewport' intial-scale='1.0', content=''> -->
+<link rel='stylesheet' type='text/css' href='css/stylesheet.css'>
+
+
+
+<!-- local Jquery -->
+
+<script  src='js/jquery/jquery.js'></script>
+<!-- <script src='js/modernizr.js'></script> -->
+<script src='js/hammer.min.js'></script>
+
+<script type='text/javascript'>
+jQuery(document).on('mobileinit', function() { jQuery.mobile.autoInitializePage = false;
+});</script>
+<script src='js/jquery/jquery.mobile-1.4.5.min.js'></script>
+
+<!-- local lib and tests -->
+<script  src='js/page-script.js'></script>
+
+<script>
+function loadMemoriesFromDB(){
+	userid=1;	//maybe get from cookie?
+	//make ajax request to get data ... generate a div like template below for each of them
+	var resultantHTML = '';	//store the HTML containing all the memories. 
+	$.ajax({
+			dataType: 'json',
+			method: 'GET',
+			url: 'https://team23-project.herokuapp.com/memory/get/timeline/' + userid    	
+	}).done(function(data){
+		data.forEach(function (memory, index){
+			resultantHTML += '<div class="imgContainer" >';
+			resultantHTML += '<div class="load-info-box">';
+			// resultantHTML += '<img class="load-smiley" src="'+ memory.emotion +'">';
+			if(memory.circlecolor != 0){
+			resultantHTML += '<img class="load-smiley" src="'+ memory.emotion +'"  style="background-image: url(&quot;img/smiley/drawing-happy.png&quot;)">';
+			} else {
+			resultantHTML += '<img class="load-smiley" src="'+ memory.emotion +'" style="background-image: url(&quot;img/smiley/drawing-sad.png&quot;)">';	
+			}
+			resultantHTML += ' <div class="load-date-box">';
+			resultantHTML += '<p> Feb </p> <p> 11 </p> </div>';
+			resultantHTML += '<div class="load-description-box"><h2>'+ memory.title +' </h2> <h3>'+ memory.hashtags +' </h3></div>';
+			resultantHTML += '<img class="load-arrow" src="img/icons/right_arrow.png" onclick="retrieveMemory()">'
+			resultantHTML += '</div></div>';
+		});
+		//add the resultantHTML to the content-wrapper element.
+		//DEBUG alert(resultantHTML);
+		$('#load-content-wrapper').append(resultantHTML);
+
+
+	}).fail(function(jgXHR, textStatus, errorThrown){
+		alert('Server Connection Error');			//let user know something is wrong. 
+		console.log('ERROR: '+textStatus+ errorThrown);
+	});	
+}
+
+//This is we will (i think) state the values of the variables/elements on the  retrieved page once the user clicks the arrow. - Regan
+function retrieveMemory() {
+	$(".white-fader").fadeTo(1500, 1, function () {
+		  		window.location.href = 'retrieved.html';
+		  	});
+}
+
+</script>
+
+<!-- 
+	<div class='imgContainer'>
+			<div class='load-info-box'>
+									<img class='load-smiley' src='img/stock/drawn_01.png'>	
+					<div class='load-date-box'>
+						<p> Feb </p>
+						<p> 11 </p>				
+					</div>
+					<div class='load-description-box'>
+						<h2>A Short Description...</h2>
+						<h3>#Fun #Hashtag </h3>
+					</div>
+					<img class="load-arrow" src="img/icons/right_arrow.png">
+			</div>
+		</div> -->
+
+
+</head>
+
+<body>
+<div id="wrapper">
+		<div class='navbar'>
+			<img class='nav-logo' src="img/Logo_Final_Small.png">
+			<img class="nav-icon-settings" src="img/icons/settings_icon.png">
+		</div>
+
+		<div id ='bottom-navbar'>
+			<ul>
+
+				<li>
+					<img class="nav-icon home-button" src="img/icons/home_icon.png">
+				</li>	
+
+				<li>
+					<img class="nav-icon create-button" src="img/icons/create_icon.png">		
+				</li>	
+
+				<li>
+					<img class="nav-icon history-button" src="img/icons/history_icon.png">
+				</li>
+
+				<li>
+					<img class="nav-icon graph-button" src="img/icons/graph_icon.png">
+				</li>
+
+			</ul>
+		</div>	
+
+	<div class="white-fader"></div>
+
+
+		<div id="load-content-wrapper" style="padding-top: 0px; margin-top: 70px">
+
+
+		<!-- add for each loop -->
+				
+			<div class='imgContainer'>
+				<div class='load-info-box' >
+										<img class='load-smiley' src='img/stock/drawn_01.png' >	
+						<div class='load-date-box'>
+							<p> Feb </p>
+							<p> 11 </p>				
+						</div>
+						<div class='load-description-box'>
+							<h2>A Short Description...</h2>
+							<h3>#Fun #Hashtag </h3>
+						</div>
+						<img class="load-arrow" src="img/icons/right_arrow.png" onclick="retrieveMemory()">
+				</div>
+			</div>
+
+		</div>
+
+
+
+</div>
+
+<script type='text/javascript'>
+ 
+
+//Once the document has loaded do this function.. loads the memories from the DB. 
+$( document ).ready(function() {
+    loadMemoriesFromDB();
+
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+team23-project::DATABASE=> SELECT * FROM memory;
+ memoryid |        title         |                       text                       | userid |                                        image
+                   |  emotion  | tagid
+----------+----------------------+--------------------------------------------------+--------+-------------------------------------------------------------------
+-------------------+-----------+-------
+        6 | Test Title           | Fun time at park.(curl test)                     |      1 | shortURL1.jpg
+                   | happy     |     1
+        7 | Test Title           | Fun time at park.(curl test)                     |      1 | shortURL1.jpg
+                   | happy     |     1
+        9 | Cointent             | first spelled correctly.                         |      1 | http://www.google.com/example.jpg
+                   | fun       |     1
+        8 | jxoan                | jxoan                                            |      1 |
+                   | jxoan     |     1
+        5 | Test Title           | Fun time at park.                                |      1 | http://abduzeedo.com/files/originals/9/942fa71de716b9ba49ed97f921b
+4daeb.jpg          | happy     |     1
+        1 | Sunset on the beach. | Trip to the zoo.                                 |      1 | http://www.wallpaperhi.com/thumbnails/detail/20120123/0-hdr-beauty
+.jpg               | fantastic |     1
+        2 | Forest walk          | Default memory text                              |      1 | http://fc01.deviantart.net/fs15/i/2007/113/0/0/Evening_at_Rydal_Wa
+ter_by_scotto.jpg  | sad       |     1
+        3 | Skiing in Nepal      | Default memory text                              |      1 | http://fc01.deviantart.net/fs40/f/2009/009/d/f/dfc1b4a8a381157fbb5
+ec579377f8004.jpg  | sad       |     1
+        4 | Fern Fantastic       | Default memory text again                        |      1 | http://amolife.com/image/images/stories/Nature/landscapes/world_fu
+ll_of_beauty_9.jpg | sad       |     1
+       10 | testThing            | was good and stuff                               |      1 | http://www.google.com/example.jpg
+                   | fun       |     1
+       11 |                      |                                                  |      1 | http://www.google.com/example.jpg
+                   | fun       |     1
+       12 | Monday               | Hey                                              |      1 | http://www.google.com/example.jpg
+                   | fun       |     1
+       13 | April was here       | good                                            +|      1 | http://www.google.com/example.jpg
+                   | fun       |     1
+          |                      |                                                  |        |
+                   |           |
+       14 | test mem yay         | dghjvvgh                                         |      1 | http://www.google.com/example.jpg
+                   | fun       |     1
+       15 |  LastNightsDream     | It was astounding. you wouldnt believe your eyes |      1 | http://www.google.com/example.jpg
+                   | fun       |     1
+(15 rows)

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>testing page</title>
+<meta name="viewport" intial-scale='1.0', content="user-scalable=no, width=device-width, initial-scale=1">
+<!-- <meta name="viewport" intial-scale='1.0', content=""> -->
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="css/testing.css">
+
+
+
+
+<!-- local Jquery -->
+
+
+<script  src="js/jquery/jquery.js"></script>
+<!-- <script src="js/modernizr.js"></script> -->
+<script src="js/hammer.min.js"></script>
+
+<script type="text/javascript">
+jQuery(document).on("mobileinit", function() { jQuery.mobile.autoInitializePage = false;
+});</script>
+<script src="js/jquery/jquery.mobile-1.4.5.min.js"></script>
+<script src='js/jquery/jquery-ui.js'></script>
+<script src='js/jquery/jquery.ui.touch-punch.min.js'></script>
+
+<!-- local lib and tests -->
+<!-- <script  src="js/page-script.js"></script> -->
+<script src="js/hashtag-cloud.js"></script>
+<!-- <script src="js/drawing-script.js"></script> -->
+<script src="js/manager-swipe.js"></script>
+<script src="js/create-page-manager.js"></script>
+
+
+</head>
+
+<body>
+<div id="wrapper">
+
+		<div class='navbar'>
+			<img class='nav-logo' src="img/Logo_Final_Small.png">
+			<img class="nav-icon-settings" src="img/icons/settings_icon.png">
+		</div>
+
+		<div id ='bottom-navbar'>
+			<ul>
+
+				<li>
+					<img class="nav-icon home-button" src="img/icons/home_icon.png">
+				</li>	
+
+				<li>
+					<img class="nav-icon create-button" src="img/icons/create_icon.png">		
+				</li>	
+
+				<li>
+					<img class="nav-icon history-button" src="img/icons/history_icon.png">
+				</li>
+
+				<li>
+					<img class="nav-icon history-button" src="img/icons/graph_icon.png">
+				</li>
+
+			</ul>
+		</div>	
+	<!-- <div class="white-fader"></div> -->
+<div class="main-content-wrapper">
+
+	<div id="page-one"> 	<h1> Page 1 </h1>	</div>
+
+	<div id="page-two"> 	<h1> Page 2 </h1>	</div>
+	
+	<div id="page-three"> 	<h1> Page 3 </h1>	</div>
+
+	<div id="page-four"> 	<h1> Page 4 </h1>	</div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+
+function submitMemory(){
+    //get all the info into vairables. 
+	var title = $("#title1").val();
+    var text = $("#text-area-01").val();
+    //var userid = ;
+	var imageURL = "http://www.google.com/example.jpg"
+    var emotionStr = 'fun';
+    var tag = 1;
+
+    $.ajax({
+    	dataType: "json",
+		method: "POST",
+		url: 'https://team23-project.herokuapp.com/memory/store',
+    	data: {
+    		"title": title,
+    		"text": text,
+    		"userid": 1,
+    		"image": imageURL,
+    		"emotion": emotionStr,
+    		"tagid": tag
+    	}
+    }).done(function(data){
+		alert("Successfully uploaded... " + data);	
+	}).fail(function(jgXHR, textStatus, errorThrown){
+		alert("Server Connection Error");			//let user know something is wrong. 
+		console.log("ERROR: "+textStatus+ errorThrown);
+	});
+
+}
+
+
+function download() {
+    var dt = canvas.toDataURL('image/png');
+    this.href = dt;
+};
+
+
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#uploaded-img-01')
+                    .attr('src', e.target.result)
+                    
+            };
+            $('.input-selector-right').css("display", "none")
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+
+   function resetCustTag () {
+    }
+
+
+</script>
+
+
+</body>
+
+</html>

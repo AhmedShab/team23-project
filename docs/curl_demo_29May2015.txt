@@ -1,0 +1,1 @@
+curl -H "Content-Type: application/json" -X POST -d '{"memoryid":"2","text":"Fun time at zoo.","userid":"1", "image":"https://www.australiazoo.com.au/our-animals/wildlife-photos/images/roving-wombats_230.jpg", "emotion":"happy", "tagid":"1"}' http://team23-project.herokuapp.com/store
