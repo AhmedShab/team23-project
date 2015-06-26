@@ -1,9 +1,3 @@
-/* Setup DB's to default state. 
- * Using a POSTGRES transaction.
- * Compiled by Michael 5/6/2015  
- * updated to include (dates and hitCount) for memory and (tokens) for users. (13/6/2015 Mike.) 
- */
-
 var pg = require('pg').native
     , connectionString = process.env.DATABASE_URL
     , client
